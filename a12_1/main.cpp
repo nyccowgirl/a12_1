@@ -7,12 +7,13 @@
  
  Assignment 12.1
  
- Write a string class. To avoid conflicts with other similarly named classes, we will call
- our version MyString. This object is designed to make working with sequences of characters
- a little more convenient and less error-prone than handling raw c-strings, (although it
- will be implemented as a c-string behind the scenes). The MyString class will handle
- constructing strings, reading/printing, and accessing characters. In addition, the
- MyString object will have the ability to make a full deep-copy of itself when copied.
+ Assignment is extension of Assignment 11.1 to write a string class. To avoid conflicts
+ with other similarly named classes, we will call our version MyString. This object is
+ designed to make working with sequences of characters a little more convenient and less
+ error-prone than handling raw c-strings, (although it will be implemented as a c-string
+ behind the scenes). The MyString class will handle constructing strings, reading/printing,
+ and accessing characters. In addition, the MyString object will have the ability to make a
+ full deep-copy of itself when copied.
  
  Created by nyccowgirl on 11/17/20.
  Copyright © 2020 nyccowgirl. All rights reserved.

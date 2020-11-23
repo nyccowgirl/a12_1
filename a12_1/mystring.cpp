@@ -7,12 +7,13 @@
  
  Assignment 12.1
  
- Write a string class. To avoid conflicts with other similarly named classes, we will call
- our version MyString. This object is designed to make working with sequences of characters
- a little more convenient and less error-prone than handling raw c-strings, (although it
- will be implemented as a c-string behind the scenes). The MyString class will handle
- constructing strings, reading/printing, and accessing characters. In addition, the
- MyString object will have the ability to make a full deep-copy of itself when copied.
+ Assignment is extension of Assignment 11.1 to write a string class. To avoid conflicts
+ with other similarly named classes, we will call our version MyString. This object is
+ designed to make working with sequences of characters a little more convenient and less
+ error-prone than handling raw c-strings, (although it will be implemented as a c-string
+ behind the scenes). The MyString class will handle constructing strings, reading/printing,
+ and accessing characters. In addition, the MyString object will have the ability to make a
+ full deep-copy of itself when copied.
  
  Created by nyccowgirl on 11/17/20.
  Copyright © 2020 nyccowgirl. All rights reserved.
@@ -129,11 +130,6 @@ namespace cs_mystring {
 
     MyString MyString::operator+=(const char *inCstring) {
         *this = *this + inCstring;
-//        MyString temp = *this;
-//        delete [] cstring;
-//        cstring = new char[temp.length() + strlen(inCstring) + 1];
-//        strcpy(cstring, temp.cstring);
-//        strcat(cstring, inCstring);
         return *this;
     }
 
@@ -144,14 +140,8 @@ namespace cs_mystring {
 
     MyString MyString::operator+=(const MyString &right) {
         *this = *this + right;
-//        MyString temp = *this;
-//        delete [] cstring;
-//        cstring = new char[temp.length() + right.length() + 1];
-//        strcpy(cstring, temp.cstring);
-//        strcat(cstring, right.cstring);
         return *this;
     }
-
 
 
 
@@ -243,7 +233,7 @@ namespace cs_mystring {
         }
         
         char temp[MyString::MAX_SIZE + 1];
-        in.getline(temp, MyString::MAX_SIZE, ' ');
+        in >> temp;
         delete [] right.cstring;
         right.cstring = new char[strlen(temp) + 1];
         strcpy(right.cstring, temp);

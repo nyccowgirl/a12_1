@@ -7,12 +7,13 @@
  
  Assignment 12.1
  
- Write a string class. To avoid conflicts with other similarly named classes, we will call
- our version MyString. This object is designed to make working with sequences of characters
- a little more convenient and less error-prone than handling raw c-strings, (although it
- will be implemented as a c-string behind the scenes). The MyString class will handle
- constructing strings, reading/printing, and accessing characters. In addition, the
- MyString object will have the ability to make a full deep-copy of itself when copied.
+ Assignment is extension of Assignment 11.1 to write a string class. To avoid conflicts
+ with other similarly named classes, we will call our version MyString. This object is
+ designed to make working with sequences of characters a little more convenient and less
+ error-prone than handling raw c-strings, (although it will be implemented as a c-string
+ behind the scenes). The MyString class will handle constructing strings, reading/printing,
+ and accessing characters. In addition, the MyString object will have the ability to make a
+ full deep-copy of itself when copied.
  
  Created by nyccowgirl on 11/17/20.
  Copyright © 2020 nyccowgirl. All rights reserved.
@@ -75,8 +76,8 @@ namespace cs_mystring {
  
  void read(istream &in, char deliminator);
   pre: Client programmer specifies appropriate deliminating character.
-  post: Uses in.getline() function to read input into non-dynamic array and copies it to
-        data member of a MyString object.
+  post: Uses in.getline() function to read line from file into non-dynamic array up to the
+        deliminating character and converts each line to the data member of calling object.
  
  friend MyString operator+(const MyString &left, const MyString &right);
   post: The calling object is created and initialized to combine the MyString of the
@@ -107,7 +108,8 @@ namespace cs_mystring {
         of the parameter "right". Otherwise, returns false.
  
  friend std::istream &operator>>(std::istream &in, MyString &right);
-  post: Reads a line from file, and converts each line into a MyString object.
+  post: Skips leading spaces and reads characters into a string up to first whitespace
+        character and converts each line to MyString object.
 
  friend std::ostream &operator<<(std::ostream &out, const MyString &right);
   post: The calling object has been printed to the console window in the formats of string.
@@ -164,7 +166,6 @@ namespace cs_mystring {
  Read string = time
  Read string = we
  Read string = will
-
  Read string = read
  Read string = individual
  Read string = words,
