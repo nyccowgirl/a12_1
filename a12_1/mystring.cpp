@@ -34,7 +34,7 @@ namespace cs_mystring {
 */
 
     MyString::MyString() {
-        cstring = new char(1);
+        cstring = new char[1];
         strcpy(cstring, "");
     }
 
@@ -44,7 +44,7 @@ namespace cs_mystring {
 
 
     MyString::MyString(const char *inCstring) {
-        cstring = new char(strlen(inCstring) + 1);
+        cstring = new char[strlen(inCstring) + 1];
         strcpy(cstring, inCstring);
     }
 
@@ -54,7 +54,7 @@ namespace cs_mystring {
 
 
     MyString::MyString(const MyString &str) {
-        cstring = new char(str.length() + 1);
+        cstring = new char[str.length() + 1];
         strcpy(cstring, str.cstring);
     }
 
@@ -162,7 +162,8 @@ namespace cs_mystring {
 
 
     MyString operator+(const MyString &left, const MyString &right) {
-        MyString temp = new char(left.length() + right.length() + 1);
+        MyString temp;
+        temp.cstring = new char[left.length() + right.length() + 1];
         strcpy(temp.cstring, left.cstring);
         strcat(temp.cstring, right.cstring);
         return temp;
